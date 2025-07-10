@@ -1,0 +1,111 @@
+.backgroundProfile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #202020;
+    z-index: -1;
+    background-size: cover;
+}
+
+.contenedorProfile {
+    width: 1000px;
+    margin: 50px auto 0 auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.contenedorProfile img {
+    height: 200px;
+    width: auto;
+    border-radius: 10px;
+}
+
+.profileInfo {
+    flex: 1;
+    padding-top: 25px;
+}
+
+.profileInfo h5 {
+    margin: 0 0 0.3rem;
+    font-size: 1.5rem;
+}
+
+.profileInfo span {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.profileInfo p {
+    margin-top: 0.6rem;
+    line-height: 1.55;
+    max-height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+
+.verMasBtn {
+    margin-top: 0.5rem;
+    background-color: #444;
+    color: white;
+    padding: 6px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* fondo oscuro semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modalContent {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.closeModal {
+    background: crimson;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.verMasBtn {
+    display: inline-block;   /* ✅ NECESARIO para que se vea como botón */
+    background-color: #444;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+}

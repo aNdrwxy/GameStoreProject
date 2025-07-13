@@ -1,28 +1,10 @@
-import { useForm } from "react-hook-form";
-import { createUser } from "../api/profiles.api";
-
+import {Register} from "../components/register/Register";
+import {Footer} from "../components/layout/Footer";
 export function RegisterPage(){
-
-    const {register, handleSubmit, formState:{
-        errors
-    }} = useForm();
-
-    const onSubmit = handleSubmit(async data => {
-        const res = await createUser(data);
-        console.log(res);
-    })
-    
-    return(
+    return (
         <div>
-            <form onSubmit={onSubmit}>
-                <input type="text" placeholder="Nickname" {...register("nickname", {required: true})}/>
-                {errors.nickname && <span>Este campo es Requerido</span>}
-                <br />
-                <input type="password" placeholder="Password" {...register("password", {required: true})}/>
-                {errors.password && <span>Este campo es Requerido</span>}
-                <br />
-                <button>Crear Cuenta</button>
-            </form>
+            <Register />
+            <Footer />
         </div>
-    )
+    );
 }

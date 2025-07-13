@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
+import { toast } from 'react-toastify';
 
 export function Login() {
     const [nickname, setNickname] = useState("");
@@ -37,9 +38,9 @@ export function Login() {
             localStorage.setItem("refresh", data.refresh);
             localStorage.setItem("user_id", data.user_id);
             localStorage.setItem("nickname", data.nickname);
+            localStorage.setItem("rol", data.rol);
             window.dispatchEvent(new Event("storage"));
-            navigate("/profile/" +  data.user_id);
-            window.location.reload(); // redirigir al home o a donde quieras
+            navigate("/profile/" +  data.user_id); // redirigir al home o a donde quieras
         } else {
             setError(data.detail || "Credenciales incorrectas");
         }

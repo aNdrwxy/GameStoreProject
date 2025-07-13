@@ -1,9 +1,6 @@
+import { EditProfile } from "../components/editProfile/EditProfile";
 
 export function EditProfilePage(){
 
-    return(
-        <div>
-            editProfilePage
-        </div>
-    )
+    return <EditProfile />
 }

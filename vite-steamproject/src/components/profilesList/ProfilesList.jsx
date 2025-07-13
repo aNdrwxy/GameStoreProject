@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { getAllProfiles } from "../api/profiles.api";
+import { getAllProfiles } from "../../api/profiles.api";
 import { ProfilesCard } from './ProfilesCard'
 
 export function ProfileList(){

@@ -23,9 +23,6 @@ class UserSerializer(serializers.ModelSerializer):
         validated_data['password'] = make_password(validated_data['password'])
         user = User.objects.create(**validated_data)
 
-        # Crear el perfil automáticamente
-        Perfil.objects.create(user=user)
-
         return user
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -53,6 +50,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
             'refresh': str(refresh),
             'access': str(refresh.access_token),
             'nickname': user.nickname,
+            'rol': user.rol,
             'user_id': user.id
         }
 

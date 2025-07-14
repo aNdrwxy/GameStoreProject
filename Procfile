@@ -1,1 +1,2 @@
-web: sh -c "python manage.py migrate && gunicorn SteamProyectEF.wsgi:application"
+release: python manage.py migrate
+web: gunicorn SteamProyectEF.wsgi

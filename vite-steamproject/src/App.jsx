@@ -9,6 +9,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { RegisterPage } from "./pages/RegisterPage";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { UserBibliotecaPage } from "./pages/UserBibliotecaPage";
 
 
 function App(params) {
@@ -24,6 +25,7 @@ function App(params) {
     <Route path="/profile" element={<Navigate to="/login" />} />
     <Route path="/profile/:id"element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
     <Route path="/profile/edit/:id" element={<ProtectedRoute><EditProfilePage /></ProtectedRoute>} />
+    <Route path="/biblioteca" element={<ProtectedRoute><UserBibliotecaPage /></ProtectedRoute>} />
     </Routes>
     <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={true} closeOnClick pauseOnHover draggable theme="dark"/>
     </BrowserRouter>

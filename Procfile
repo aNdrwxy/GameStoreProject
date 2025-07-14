@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn SteamProyectEF.wsgi
+web: python manage.py collectstatic  && gunicorn SteamProyectEF.wsgi

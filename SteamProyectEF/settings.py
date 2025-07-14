@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'drf_yasg',
     'accounts',
     'comentarios',
-    'insignias'
+    'insignias',
+    'biblioteca',
+    'juegos'
 ]
 
 REST_FRAMEWORK = {

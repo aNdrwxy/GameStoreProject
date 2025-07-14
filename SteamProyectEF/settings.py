@@ -147,7 +147,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173",
+"https://web-production-9d53.up.railway.app",
+"https://vite-steamproject.vercel.app"]
 
 STORAGES = {
     # ...
@@ -156,7 +158,7 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-9d53.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-9d53.up.railway.app',"https://vite-steamproject.vercel.app"]
 
 
 print("USANDO DB:", os.environ.get("DATABASE_URL"))

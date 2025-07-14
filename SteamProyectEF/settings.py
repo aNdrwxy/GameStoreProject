@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
-import pymysql
+from dotenv import load_dotenv
+import dj_database_url
 
-pymysql.install_as_MySQLdb()
-
-
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,14 +100,7 @@ WSGI_APPLICATION = 'SteamProyectEF.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("MYSQLDATABASE"),
-        'USER': os.environ.get("MYSQLUSER"),
-        'PASSWORD': os.environ.get("MYSQLPASSWORD"),
-        'HOST': os.environ.get("MYSQLHOST"),
-        'PORT': os.environ.get("MYSQLPORT"),
-    }
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 
@@ -167,4 +159,4 @@ STORAGES = {
 CSRF_TRUSTED_ORIGINS = ['https://web-production-9d53.up.railway.app']
 
 
-print("USANDO DB:", os.environ.get("MYSQLDATABASE"))
+print("USANDO DB:", os.environ.get("DATABASE_URL"))

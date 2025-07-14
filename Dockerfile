@@ -9,9 +9,8 @@ COPY . /app/
 
 # Instala dependencias del sistema (mysql, etc.)
 RUN apt-get update && apt-get install -y \
-    gcc \
-    default-libmysqlclient-dev \
-    pkg-config \
+    build-essential \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Instala dependencias del proyecto

@@ -1,1 +1,2 @@
-web: bash -c "python manage.py migrate && gunicorn SteamProyectEF.wsgi"
+web: gunicorn SteamProyectEF.wsgi --log-file -
+release: python manage.py migrate

@@ -1,1 +1,1 @@
-web: gunicorn SteamProyectEF.wsgi
+web: bash -c "python manage.py migrate && gunicorn gamestore.wsgi"

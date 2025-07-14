@@ -4,27 +4,24 @@ FROM python:3.12-slim
 # Establece el directorio de trabajo
 WORKDIR /app
 
-# Copia los archivos
+# Copia los archivos del proyecto
 COPY . /app/
 
-# Instala dependencias del sistema (mysql, etc.)
+# Instala dependencias del sistema para PostgreSQL
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Instala dependencias del proyecto
+# Instala dependencias de Python
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Recolecta archivos estáticos
+# Recolecta archivos estáticos de Django
 RUN python manage.py collectstatic --noinput
 
-# Ejecuta migraciones (opcional)
-# RUN python manage.py migrate
-
-# Expone el puerto
+# Expone el puerto de la app
 EXPOSE 8080
 
-# Comando por defecto para ejecutar Gunicorn
+# Comando para iniciar la app en producción
 CMD ["gunicorn", "SteamProyectEF.wsgi", "--bind", "0.0.0.0:8080"]

@@ -3,3 +3,6 @@ djangorestframework
 drf-yasg
 django-cors-headers
 djangorestframework-simplejwt
+mysqlclient
+python-dotenv
+gunicorn

@@ -1,1 +1,1 @@
-web: bash -c "python manage.py migrate && gunicorn gamestore.wsgi"
+web: bash -c "python manage.py migrate && gunicorn SteamProyectEF.wsgi"

@@ -1,0 +1,25 @@
+.biblioteca-container {
+    padding: 1rem;
+}
+
+.buscador-input {
+    width: 50%;
+    padding: 10px;
+    background-color: #2a2f35;
+    border: 1px solid #3c434b;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: border 0.2s;
+    
+}
+
+.buscador-input:focus {
+    border-color: #66c0f4;
+    outline: none;
+}
+
+.inputContainer{
+    display: flex;
+    justify-content: center;
+}

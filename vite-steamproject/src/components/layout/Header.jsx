@@ -64,9 +64,12 @@ export function Header() {
                 <Link to="/profiles" className={`boton_header ${isActiveExact("/profiles") ? "activo" : ""}`}>Comunidad</Link>
                 <Link to="/tickets" className={`boton_header ${isActiveExact("/tickets") ? "activo" : ""}`}>Tickets</Link>
                 {perfil ? (
-                    <Link to={`/profile/${perfil.id}`} className={`boton_header ${isActiveExact(`/profile/${perfil.id}`) ? "activo" : ""}`}>{perfil.nombre_perfil}</Link>
+                    <>
+                        <Link to={`/profile/${perfil.id}`} className={`boton_header ${isActiveExact(`/profile/${perfil.id}`) ? "activo" : ""}`}>{perfil.nombre_perfil}</Link>
+                        <Link to="/biblioteca" className={`boton_header ${isActiveExact("/biblioteca") ? "activo" : ""}`}>Biblioteca</Link>
+                    </>
                 ) : (
-                    <Link to="/register" className={`boton_header ${isActiveExact("/register") ? "activo" : ""}`}>Registrarse</Link>
+                        <Link to="/register" className={`boton_header ${isActiveExact("/register") ? "activo" : ""}`}>Registrarse</Link>
                 )}
             </div>
 
@@ -81,6 +84,7 @@ export function Header() {
                             <div className="menu-dropdown">
                                 <div onClick={() => setMenuAbierto(false)}><Link to={`/profile/${perfil.id}`}>👤 Ver perfil</Link></div>
                                 <div onClick={() => setMenuAbierto(false)}><Link to={`/profile/edit/${perfil.id}`}>✏️ Editar perfil</Link></div>
+                                <div onClick={() => setMenuAbierto(false)}><Link to={`/biblioteca`}>🎮 Biblioteca de Juegos</Link></div>
                                 <div><button onClick={handleLogout}>🚪 Cerrar sesión</button></div>
                             </div>
                         )}

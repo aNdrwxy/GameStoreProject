@@ -149,7 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:5173",
 "https://web-production-9d53.up.railway.app",
-"https://vite-steamproject-1ral-5xiicjn39-andrwxys-projects.vercel.app"]
+"https://vite-steamproject-1ral.vercel.app/"]
 
 STORAGES = {
     # ...
@@ -158,7 +158,7 @@ STORAGES = {
     },
 }
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-9d53.up.railway.app',"https://vite-steamproject-1ral-5xiicjn39-andrwxys-projects.vercel.app"]
+CSRF_TRUSTED_ORIGINS = ['https://web-production-9d53.up.railway.app',"https://vite-steamproject-1ral.vercel.app/"]
 
 
 print("USANDO DB:", os.environ.get("DATABASE_URL"))
